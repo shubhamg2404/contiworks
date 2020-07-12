@@ -5,6 +5,7 @@
 
       countdown100: function(options) {
         var defaults = {
+          deadline:'2020-07-25',
           timeZone: "",
           endtimeYear: 0,
           endtimeMonth: 0,
@@ -29,7 +30,7 @@
           var endSeconds = options.endtimeSeconds;
 
           if(tZ == "") {
-            var deadline = new Date(endYear, endMonth - 1, endDate, endHours, endMinutes, endSeconds);
+            var deadline = new Date(defaults.deadline);
           } 
           else {
             var deadline = moment.tz([endYear, endMonth - 1, endDate, endHours, endMinutes, endSeconds], tZ).format();
